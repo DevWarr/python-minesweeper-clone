@@ -1,5 +1,5 @@
 from tkinter import *
-from game_classes import GameFrame
+from classes.GameFrame import GameFrame
 
 root = Tk()
 root.title("Minesweeper Clone")
