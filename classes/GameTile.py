@@ -16,18 +16,20 @@ class GameTile:
         self.state = tile_states.UnrevealedState(master_class, self)
         self.state.on_enter()
 
-        self.tile.bind("<Button-1>", lambda event: self.state.on_mousedown(event))
-        self.tile.bind("<ButtonRelease-1>", lambda event: self.state.on_mouseup(event))
-        self.tile.bind("<Button-3>", lambda event: self.state.on_rightclick(event))
+        self.tile.bind("<Button-1>",        lambda event: self.handle_event(event, self.state.on_mousedown))
+        self.tile.bind("<ButtonRelease-1>", lambda event: self.handle_event(event, self.state.on_mouseup))
+        self.tile.bind("<Button-3>",        lambda event: self.handle_event(event, self.state.on_rightclick))
 
     def set_image(self, new_image):
         tile_image = ImageTk.PhotoImage(new_image)
         self.tile.configure(image=tile_image)
         self.tile.image = tile_image
-    
-    def change_state(self, new_state):
-        self.state = new_state
-        self.state.on_enter()
+
+    # Make sure that we only handle clicks if we're in play mode
+    def handle_event(self, event, callback):
+        if self.main_class.state != "play":
+            return 
+        callback(event)
 
     def __str__(self):
         return f"{self.tile}"
