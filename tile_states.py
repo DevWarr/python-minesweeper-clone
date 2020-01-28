@@ -84,7 +84,12 @@ class RevealedState(TileState):
         super().__init__(master, tile)
 
     def on_enter(self):
-        self.tile_class.set_image(number_tiles["Zero"])
+        if self.tile_class.value == 9:
+            self.tile_class.set_image(number_tiles[9])
+            self.master.lose_game()
+        else:
+            # self.master.check_for_mines(self.tile.row_number, self.tile.column_number)
+            self.tile_class.set_image(number_tiles[0])
 
     def on_mousedown(self, event):
         return super().on_mousedown(event)
