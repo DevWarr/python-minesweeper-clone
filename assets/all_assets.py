@@ -21,6 +21,3 @@ other_tiles = {
     "Selected": Image.open(os.path.join(FILEPATH, "TileSelected.png")),
     "Flagged": Image.open(os.path.join(FILEPATH, "TileFlagged.png"))
 }
-
-
-print("Done!")
