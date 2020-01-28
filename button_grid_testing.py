@@ -72,6 +72,8 @@ class game_frame:
         self.selected_tile.update()
         self.selected_tile = None
 
-game_frame(root)
 
-root.mainloop()
+if __name__ == "__main__":
+
+    game_frame(root)
+    root.mainloop()
