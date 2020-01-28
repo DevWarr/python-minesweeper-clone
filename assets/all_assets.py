@@ -3,18 +3,18 @@ import os
 
 FILEPATH = os.path.dirname(__file__)
 
-number_tiles = {
-    "Zero": Image.open(os.path.join(FILEPATH, "TileZero.png")),
-    "One": Image.open(os.path.join(FILEPATH, "TileOne.png")),
-    "Two": Image.open(os.path.join(FILEPATH, "TileTwo.png")),
-    "Three": Image.open(os.path.join(FILEPATH, "TileThree.png")),
-    "Four": Image.open(os.path.join(FILEPATH, "TileFour.png")),
-    "Five": Image.open(os.path.join(FILEPATH, "TileFive.png")),
-    "Six": Image.open(os.path.join(FILEPATH, "TileSix.png")),
-    "Seven": Image.open(os.path.join(FILEPATH, "TileSeven.png")),
-    "Eight": Image.open(os.path.join(FILEPATH, "TileEight.png")),
-    "Bomb": None
-}
+number_tiles = [
+    Image.open(os.path.join(FILEPATH, "TileZero.png")),  # 0
+    Image.open(os.path.join(FILEPATH, "TileOne.png")),   # 1
+    Image.open(os.path.join(FILEPATH, "TileTwo.png")),   # 2
+    Image.open(os.path.join(FILEPATH, "TileThree.png")), # 3
+    Image.open(os.path.join(FILEPATH, "TileFour.png")),  # 4
+    Image.open(os.path.join(FILEPATH, "TileFive.png")),  # 5
+    Image.open(os.path.join(FILEPATH, "TileSix.png")),   # 6
+    Image.open(os.path.join(FILEPATH, "TileSeven.png")), # 7
+    Image.open(os.path.join(FILEPATH, "TileEight.png")), # 8
+    Image.open(os.path.join(FILEPATH, "TileBomb.png")),  # 9
+]
 
 other_tiles = {
     "Unrevealed": Image.open(os.path.join(FILEPATH, "TileUnrevealed.png")),
