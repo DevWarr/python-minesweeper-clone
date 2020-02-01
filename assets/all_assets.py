@@ -21,3 +21,6 @@ other_tiles = {
     "Selected": Image.open(os.path.join(FILEPATH, "TileSelected.png")),
     "Flagged": Image.open(os.path.join(FILEPATH, "TileFlagged.png"))
 }
+
+# Here, we don't want to open the image, but rather to keep a file path to the image
+window_icon = os.path.join(FILEPATH, "BombIcon.ico")

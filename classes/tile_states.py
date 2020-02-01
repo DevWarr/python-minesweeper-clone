@@ -46,12 +46,12 @@ class UnrevealedState(TileState):
     
     def on_mouseup(self, event):
         if (self.is_clicked(event)):
-            self.tile_class.change_state(RevealedState(self.master, self.tile_class))
+            self.master.change_tile_state(self.tile_class, RevealedState(self.master, self.tile_class))
         else:
             self.tile_class.set_image(other_tiles["Unrevealed"])
     
     def on_rightclick(self, event):
-        self.tile_class.change_state(FlaggedState(self.master, self.tile_class))
+        self.master.change_tile_state(self.tile_class, FlaggedState(self.master, self.tile_class))
 
 
 
@@ -72,7 +72,7 @@ class FlaggedState(TileState):
         return super().on_mouseup(event)
     
     def on_rightclick(self, event):
-        self.tile_class.change_state(UnrevealedState(self.master, self.tile_class))
+        self.master.change_tile_state(self.tile_class, UnrevealedState(self.master, self.tile_class))
 
 
 
